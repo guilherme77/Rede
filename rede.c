@@ -111,6 +111,18 @@ int main(void)
 /* Prints help information 
  *  usually called by opt -h or --help
  */
+void raffle(int, int[VMAX])
+{
+}
+
+int licensed(int[VMAX][VMAX], int[VMAX], int, int)
+{
+}
+
+void shots(int[VMAX][VMAX], int[MAX][MAX], int[MAX], int)
+{
+}
+
 void help(void)
 {
     IFDEBUG("help()");
