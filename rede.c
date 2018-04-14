@@ -120,11 +120,27 @@ int main(void)
             }
             else
                 printf("A transicao %d nao pode ser disparada \n", random[j]);
-        
     
+        if(j==nt)
+        {
+            printf("Nenhuma transicao pode ser disparada.\n");
+            break;
+        }
+
+        shots(bowP, bowC, tok, random[j]);
+
+        printf("Tokens apos disparo: ");
+        for(j=0; j<nl; j++)
+            printf("L%d(%d) \n\n", j, tokens[j]);
     }
 
-    return EXIT_SUCCESS;
+    if(i!= ITER)
+        printf("Não eh possivel realizar mais disparos, falta interacoes\n\n");
+    else
+        printf("Foram realizadas todas a %d interacoes\n", ITER);
+
+    return 0;
+
 }
 
 /* add more functions here */
