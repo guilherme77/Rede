@@ -109,6 +109,17 @@ int main(void)
     /*-----------------------------------------------------*/
     for(i=0; i<ITER; i++) /*Laço principal*/
     {
+        raffle(nt, random);
+        printf("\nVetor Random: ");
+
+        for(j=0; j<nt; j++)
+            if(licensed(bowC, tok, nl, random[j]))
+            {
+                printf("A transicao %d foi disparada \n", random[j]);
+                break;
+            }
+            else
+                printf("A transicao %d nao pode ser disparada \n", random[j]);
         
     
     }
