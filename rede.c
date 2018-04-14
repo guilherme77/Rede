@@ -62,9 +62,9 @@
 
 /* ---------------------------------------------------------------------- */
 /* prototypes */
-void shots(int[VMAX][VMAX], int[MAX][MAX], int[MAX], int);
-int licensed(int[VMAX][VMAX], int[VMAX], int, int);
-void raffle(int, int[VMAX]);
+void raffle(int nt, vet[VMAX]) /*Funcao para sortear*/
+int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t)
+void shots(int bowP[VMAX][VMAX], int bowC[MAX][MAX], int tok[MAX], int t)
 
 /* ---------------------------------------------------------------------- */
 int main(void)
@@ -143,11 +143,12 @@ void raffle(int nt, vet[VMAX]) /*Funcao para sortear*/
     return;
 }
 
-int licensed(int[VMAX][VMAX], int[VMAX], int, int)
+int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t)
 {
+
 }
 
-void shots(int[VMAX][VMAX], int[MAX][MAX], int[MAX], int)
+void shots(int bowP[VMAX][VMAX], int bowC[MAX][MAX], int tok[MAX], int t)
 {
 }
 
