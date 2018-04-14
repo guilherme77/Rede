@@ -113,6 +113,10 @@ int main(void)
         printf("\nVetor Random: ");
 
         for(j=0; j<ntran; j++)
+            printf("%d", random[j]);
+        printf("\n");
+
+        for(j=0; j<ntran; j++)
             if(licensed(bowC, tok, nlugar, random[j]))
             {
                 printf("A transicao %d foi disparada \n", random[j]);
@@ -131,11 +135,12 @@ int main(void)
 
         printf("Tokens apos disparo: ");
         for(j=0; j<nlugar; j++)
-            printf("L%d(%d) \n\n", j, tok[j]);
+            printf("L%d(%d)", j, tok[j]);
+        printf("\n");
     }
 
     if(i!= ITER)
-        printf("Não eh possivel realizar mais disparos, falta interacoes\n\n");
+        printf("Não eh possivel realizar mais disparos, falta interacoes: %d\n", i);
     else
         printf("Foram realizadas todas a %d interacoes\n", ITER);
 
