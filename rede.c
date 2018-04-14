@@ -157,6 +157,13 @@ int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t) /*Funcao para v
 
 void shots(int bowP[VMAX][VMAX], int bowC[MAX][MAX], int tok[MAX], int t)
 {
+    int i;
+
+    for(i=0; i<VMAX; i++)
+        tok[i]+= bowP[t][i];
+
+    for(i=0; i<VMAX; i++)
+        tok[i]-= bowC[i][t];
 }
 
 void help(void)
