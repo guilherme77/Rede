@@ -73,7 +73,7 @@ int main(void)
     int nlugar, ntran, l, t, cons, prod, i, j;
 
     srand(time(NULL));
-    
+    /*Entrada de dados...*/
     scanf("%d", &nlugar);
     printf("Quantidade de lugar: %d\n", nlugar);
 
@@ -93,14 +93,25 @@ int main(void)
     {
         scanf("%d %d", &l &t);
         scanf("%d", &bowC[l][t]);
-        printf("Bow %d: %d: %d: %d:\n", i,l,t bowC[l][t]);
+        printf("Bows %d: %d: %d: %d:\n", i,l,t bowC[l][t]);
     }
     
     scanf("%d", &prod);
     printf("Quantidade de produtores: %d\n", prod);
 
     for(i=0; i<prod; i++)
-
+    {
+        scanf("%d %d", &t, &l);
+        scanf("%d", &bowP[t][l]);
+        printf("Bows %d: %d: %d: %d:\n", i, t, l, bowP[t][l]);
+    }
+    /*... Fim das entradas*/
+    /*-----------------------------------------------------*/
+    for(i=0; i<ITER; i++) /*Laço principal*/
+    {
+        
+    
+    }
 
     return EXIT_SUCCESS;
 }
