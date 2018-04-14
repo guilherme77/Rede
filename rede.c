@@ -57,13 +57,13 @@
 
 /* limits */
 #define SBUFF 256 /* string buffer */
-#define VMAX 100
-#define ITER 1000
+#define VMAX 10
+#define ITER 10
 
 /* ---------------------------------------------------------------------- */
 /* prototypes */
-void raffle(int nt, int vet[VMAX]); /*Funcao para sortear*/
-int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t);
+void raffle(int ntran, int vet[VMAX]); /*Funcao para sortear*/
+int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nlugar, int t);
 void shots(int bowP[VMAX][VMAX], int bowC[VMAX][VMAX], int tok[VMAX], int t);
 
 /* ---------------------------------------------------------------------- */
@@ -91,9 +91,9 @@ int main(void)
 
     for(i=0; i< cons; i++)
     {
-        scanf("%d %d", &l &t);
+        scanf("%d %d", &l, &t);
         scanf("%d", &bowC[l][t]);
-        printf("Bows %d: %d: %d: %d:\n", i,l,t bowC[l][t]);
+        printf("Bows %d: %d: %d: %d:\n", i, l, t, bowC[l][t]);
     }
     
     scanf("%d", &prod);
@@ -109,11 +109,11 @@ int main(void)
     /*-----------------------------------------------------*/
     for(i=0; i<ITER; i++) /*Laço principal*/
     {
-        raffle(nt, random);
+        raffle(ntran, random);
         printf("\nVetor Random: ");
 
-        for(j=0; j<nt; j++)
-            if(licensed(bowC, tok, nl, random[j]))
+        for(j=0; j<ntran; j++)
+            if(licensed(bowC, tok, nlugar, random[j]))
             {
                 printf("A transicao %d foi disparada \n", random[j]);
                 break;
@@ -121,7 +121,7 @@ int main(void)
             else
                 printf("A transicao %d nao pode ser disparada \n", random[j]);
     
-        if(j==nt)
+        if(j==ntran)
         {
             printf("Nenhuma transicao pode ser disparada.\n");
             break;
@@ -130,8 +130,8 @@ int main(void)
         shots(bowP, bowC, tok, random[j]);
 
         printf("Tokens apos disparo: ");
-        for(j=0; j<nl; j++)
-            printf("L%d(%d) \n\n", j, tokens[j]);
+        for(j=0; j<nlugar; j++)
+            printf("L%d(%d) \n\n", j, tok[j]);
     }
 
     if(i!= ITER)
@@ -149,17 +149,17 @@ int main(void)
 /* Prints help information 
  *  usually called by opt -h or --help
  */
-void raffle(int nt, int vet[VMAX]) /*Funcao para sortear*/
+void raffle(int ntran, int vet[VMAX]) /*Funcao para sortear*/
 {
     int i, j, x, alert;
 
-    for(i=0; i<nt; t++)
+    for(i=0; i<ntran; i++)
     {
         do
         {
             alert=0;
 
-            x=rand{}%nt;
+            x=rand() %ntran;
 
             for(j=0;j<i;j++)
                 if(x==vet[j])
@@ -170,11 +170,11 @@ void raffle(int nt, int vet[VMAX]) /*Funcao para sortear*/
     return;
 }
 
-int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t) /*Funcao para ver se ta habilitado para disparar*/
+int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nlugar, int t) /*Funcao para ver se ta habilitado para disparar*/
 {
     int i;
 
-    for(i=0; i<nl; i++)
+    for(i=0; i<nlugar; i++)
     {
         if(bowC[i][t]> tok[i])
             return 0;
