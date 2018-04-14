@@ -143,9 +143,16 @@ void raffle(int nt, vet[VMAX]) /*Funcao para sortear*/
     return;
 }
 
-int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t)
+int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t) /*Funcao para ver se ta habilitado para disparar*/
 {
+    int i;
 
+    for(i=0; i<nl; i++)
+    {
+        if(bowC[i][t]> tok[i])
+            return 0;
+    }
+    return 1;
 }
 
 void shots(int bowP[VMAX][VMAX], int bowC[MAX][MAX], int tok[MAX], int t)
