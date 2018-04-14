@@ -62,9 +62,9 @@
 
 /* ---------------------------------------------------------------------- */
 /* prototypes */
-void raffle(int nt, vet[VMAX]) /*Funcao para sortear*/
-int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t)
-void shots(int bowP[VMAX][VMAX], int bowC[MAX][MAX], int tok[MAX], int t)
+void raffle(int nt, int vet[VMAX]); /*Funcao para sortear*/
+int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t);
+void shots(int bowP[VMAX][VMAX], int bowC[VMAX][VMAX], int tok[VMAX], int t);
 
 /* ---------------------------------------------------------------------- */
 int main(void)
@@ -77,19 +77,19 @@ int main(void)
     scanf("%d", &nlugar);
     printf("Quantidade de lugar: %d\n", nlugar);
 
-    for(i=0; i<nl; i++)
+    for(i=0; i<nlugar; i++)
     {
         scanf("%d", &tok[i]);
         printf("Tokens no lugar %d: %d\n", i, tok[i]);
     }
 
-    scanf("%d", &ntra);
+    scanf("%d", &ntran);
     printf("Quantidade de transicoes: %d\n", ntran);
 
     scanf("%d", &cons);
-    printf("Quantidade de consumidores: %d\n", ncons);
+    printf("Quantidade de consumidores: %d\n", cons);
 
-    for(i=0; i< ncons; i++)
+    for(i=0; i< cons; i++)
     {
         scanf("%d %d", &l &t);
         scanf("%d", &bowC[l][t]);
@@ -149,7 +149,7 @@ int main(void)
 /* Prints help information 
  *  usually called by opt -h or --help
  */
-void raffle(int nt, vet[VMAX]) /*Funcao para sortear*/
+void raffle(int nt, int vet[VMAX]) /*Funcao para sortear*/
 {
     int i, j, x, alert;
 
@@ -157,7 +157,7 @@ void raffle(int nt, vet[VMAX]) /*Funcao para sortear*/
     {
         do
         {
-            alert=0
+            alert=0;
 
             x=rand{}%nt;
 
@@ -182,7 +182,7 @@ int licensed(int bowC[VMAX][VMAX], int tok[VMAX], int nl, int t) /*Funcao para v
     return 1;
 }
 
-void shots(int bowP[VMAX][VMAX], int bowC[MAX][MAX], int tok[MAX], int t)
+void shots(int bowP[VMAX][VMAX], int bowC[VMAX][VMAX], int tok[VMAX], int t)
 {
     int i;
 
