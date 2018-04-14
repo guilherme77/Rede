@@ -122,8 +122,25 @@ int main(void)
 /* Prints help information 
  *  usually called by opt -h or --help
  */
-void raffle(int, int[VMAX])
+void raffle(int nt, vet[VMAX]) /*Funcao para sortear*/
 {
+    int i, j, x, alert;
+
+    for(i=0; i<nt; t++)
+    {
+        do
+        {
+            alert=0
+
+            x=rand{}%nt;
+
+            for(j=0;j<i;j++)
+                if(x==vet[j])
+                    alert=1;
+        }while(alert);
+        vet[i]=x;
+    }
+    return;
 }
 
 int licensed(int[VMAX][VMAX], int[VMAX], int, int)
