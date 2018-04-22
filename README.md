@@ -12,16 +12,16 @@
 | Arco Lugar -> Transicao  |
 | Aroco Transicao -> Lugar |
 
-Para executar basta botar o comando $./rede.x < rp-input-1.txt
+* Para executar basta botar o comando $./rede.x < rp-input-1.txt
 
 - Input sendo usado no arquivo -1.txt:
 ''
-3
-6
-0
-1
-2
-2
+ 3
+ 6
+ 0
+ 1
+ 2
+ 2
 0 0 2
 1 1 2
 3
