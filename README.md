@@ -14,8 +14,8 @@
 
 * Para executar basta botar o comando $./rede.x < rp-input-1.txt
 
-| - Input sendo usado no arquivo -1.txt: |
---------------------------------------------
+|  Input sendo usado no arquivo -1.txt:  |
+|----------------------------------------|
 |3                                       | 
 |6                                       |
 |0                                       |
